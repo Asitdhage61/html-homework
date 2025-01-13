@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .form-container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .form-label {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to My Personal Page</h1>
+    <div class="container form-container">
+      <form>
+        <h3>Your Details</h3>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label for="firstName" class="form-label">First Name:</label>
+            <input
+              type="text"
+              id="firstName"
+              class="form-control"
+              required
+              pattern="[A-Za-z ]"
+              title="Only alphabetic characters allowed"
+            />
+          </div>
+          <div class="col-md-4">
+            <label for="middleInitial" class="form-label"
+              >Middle Initial:</label
+            >
+            <input
+              type="text"
+              id="middleInitial"
+              class="form-control"
+              pattern="[A-Za-z]"
+              title="Only alphabetic characters allowed"
+            />
+          </div>
+          <div class="col-md-4">
+            <label for="lastName" class="form-label">Last Name:</label>
+            <input
+              type="text"
+              id="lastName"
+              class="form-control"
+              required
+              pattern="[A-Za-z ]+"
+              title="Only alphabetic characters allowed"
+            />
+          </div>
+
+          <!-- Country and Program -->
+          <div class="col-md-6">
+            <label for="country" class="form-label"
+              >Country of Residence:</label
+            >
+            <select id="country" class="form-select" required>
+              <option value="">Choose a Country</option>
+              <option value="Germany">Germany</option>
+              <option value="India">India</option>
+              <!-- Additional countries can be added -->
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="matriculationNumber" class="form-label"
+              >Matriculation Number:</label
+            >
+            <input
+              type="text"
+              id="matriculationNumber"
+              class="form-control"
+              required
+              pattern="[A-Za-z0-9]+"
+              title="Matriculation number can contain letters and digits"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="semester" class="form-label">Current Semester:</label>
+            <input type="text" id="semester" class="form-control" required />
+          </div>
+          <div class="col-md-6">
+            <label for="program" class="form-label">Study Program:</label>
+            <select id="program" class="form-select" required>
+              <option value="">Select Program</option>
+              <option value="Media">Media</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Agency">Agency</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="startDate" class="form-label"
+              >Program Start Date:</label
+            >
+            <input type="date" id="startDate" class="form-control" required />
+          </div>
+        </div>
+
+        <!-- How did you hear about the program? -->
+        <h4 class="mt-4">How did you hear about this program?</h4>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="Media"
+            id="media"
+          />
+          <label class="form-check-label" for="media">Media</label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="Marketing"
+            id="marketing"
+          />
+          <label class="form-check-label" for="marketing">Marketing</label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="Agency"
+            id="agency"
+          />
+          <label class="form-check-label" for="agency">Agency</label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="Other"
+            id="other"
+          />
+          <label class="form-check-label" for="other">Other</label>
+        </div>
+
+        <!-- Future Career Plans -->
+        <h4 class="mt-4">What are your plans after graduation?</h4>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="futureCareer"
+            id="returnHome"
+            value="returnHome"
+            required
+          />
+          <label class="form-check-label" for="returnHome"
+            >Return to my home country</label
+          >
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="futureCareer"
+            id="findJobEurope"
+            value="findJobEurope"
+            required
+          />
+          <label class="form-check-label" for="findJobEurope"
+            >Look for work in Europe</label
+          >
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="futureCareer"
+            id="pursueTraining"
+            value="pursueTraining"
+            required
+          />
+          <label class="form-check-label" for="pursueTraining"
+            >Undergo practical training before making a decision</label
+          >
+        </div>
+
+        <!-- Feedback Section -->
+        <h4 class="mt-4">The course is well planned and consists various arrays of concepts.
+          Prof. Dag offers great guidance  which effectively clears all the doubts and make student technically sound. :</h4>
+        <textarea
+          class="form-control"
+          rows="4"
+          placeholder="Your feedback..."
+          required
+        ></textarea>
+
+        <!-- SDLC Methodologies -->
+        <section class="mb-5">
+          <h2 class="mb-3 mt-4">SDLC Models</h2>
+          <p>
+            Here's an overview of some common SDLC models like Agile for
+            flexibility, Waterfall for clear structure, and DevOps for
+            continuous integration.
+          </p>
+          <p>Some of the SDLC methodologies in the Agile category include:</p>
+          <div class="row">
+            <!-- Scrum -->
+            <div class="col-md-6">
+              <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                  <h5 class="card-title">1. Scrum</h5>
+                  <p class="card-text">
+                    Focuses on iterative development and constant feedback.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Kanban -->
+            <div class="col-md-6">
+              <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                  <h5 class="card-title">2. Kanban</h5>
+                  <p class="card-text">
+                    Prioritizes task visualization and optimized workflow.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Waterfall -->
+            <div class="col-md-6">
+              <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                  <h5 class="card-title">3. Waterfall</h5>
+                  <p class="card-text">
+                    Best for projects with predefined and unchanging
+                    requirements.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Lean -->
+            <div class="col-md-6">
+              <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                  <h5 class="card-title">4. Lean</h5>
+                  <p class="card-text">
+                    Focuses on eliminating waste and maximizing value.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Course Information -->
+        <section class="mb-5">
+          <h2 class="mb-3">Software Development and Application at SRH</h2>
+          <p>During my studies, I have learned about:</p>
+          <ul class="list-group">
+            <li class="list-group-item">
+              SDLC: Organizing development phases effectively.
+            </li>
+            <li class="list-group-item">
+              Frontend and Backend Development: Essential for building
+              functional applications.
+            </li>
+            <li class="list-group-item">
+              Introduction to C Programming: For developing basic logic skills.
+            </li>
+          </ul>
+        </section>
+
+        <!-- CSS Section -->
+        <section class="mb-5">
+          <h2 class="mb-3">CSS Usage</h2>
+          <p>
+            CSS enhances the visual appeal of webpages. The methods of
+            incorporating CSS include:
+          </p>
+          <ul class="list-group">
+            <li class="list-group-item">
+              Inline CSS: Defined within HTML tags.
+            </li>
+            <li class="list-group-item">
+              Internal CSS: Included within a <code>&lt;style&gt;</code> tag in
+              the <code>&lt;head&gt;</code>.
+            </li>
+            <li class="list-group-item">
+              External CSS: Linked via a <code>&lt;link&gt;</code> tag.
+            </li>
+          </ul>
+          <p>
+            CSS is crucial as it improves design, ensures consistency, and
+            simplifies styling adjustments.
+          </p>
+        </section>
+
+        <!-- JavaScript Section -->
+        <section class="mb-5">
+          <h2 class="mb-3">JavaScript Usage</h2>
+          <p>
+            JavaScript is used to make webpages interactive. Some uses include:
+          </p>
+          <ul class="list-group">
+            <li class="list-group-item">Creating dynamic content.</li>
+            <li class="list-group-item">Validating user inputs.</li>
+            <li class="list-group-item">Enabling complex animations.</li>
+          </ul>
+        </section>
+
+        <!-- Project Declaration -->
+        <section class="mb-5">
+          <p class="alert alert-info">
+            I confirm that this project was completed independently and take
+            responsibility for any discrepancies.
+          </p>
+          <h5 class="mb-2">For inquiries, you can contact me at:</h5>
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              value="dhageasit2016@gmail.com"
+              readonly
+            />
+          </div>
+        </section>
+        <!-- Submit Button -->
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script src="./"></script>
+</html>
